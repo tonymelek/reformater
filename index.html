@@ -4,21 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reformat</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .form-group {
+            width: 50%;
+        }
+
+        label {
+            text-align: center;
+        }
+
+        textarea,
+        button {
+            display: block;
+            width: 100%;
+            margin: 20px;
+        }
+
+        textarea {
+            height: 5rem;
+        }
+
+        button {
+            height: 2rem;
+            cursor: pointer;
+        }
+
+        #click {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #click:hover {
+            background-color: orangered;
+        }
+
+        #copy {
+            background-color: teal;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #copy:hover {
+            background-color: green;
+        }
+    </style>
 </head>
 
 <body>
-    <textarea name="" id="text" cols="30" rows="10"></textarea><br>
-    <button id="click">Click</button><br><br>
-    <textarea name="" id="result" cols="30" rows="10"></textarea><br>
-    <button id="copy">Copy</button>
+    <div class="container">
+        <div class="form-group">
+            <label for="text">Paste the copied cells from Excel here:</label>
+            <textarea name="" id="text"></textarea>
+            <button id="click">Re-Format</button>
+        </div>
+        <div class="form-group">
+            <label for="result">Result:</label>
+            <textarea name="" id="result"></textarea>
+            <button id="copy">Copy</button>
+        </div>
+    </div>
     <script>
         const click = document.querySelector('#click');
         const text = document.querySelector('#text');
         const results = document.querySelector('#result');
         const copy = document.querySelector('#copy');
         click.addEventListener("click", function () {
-            let result =text.value.replaceAll("\n",",");
+            let result = text.value.replaceAll("\n", ",");
             // for (chr of text.value) {
             //     if (chr.charCodeAt(0) == 10) {
             //         result += ',';
