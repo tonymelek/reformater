@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="text" cols="30" rows="10"></textarea><br>
+    <button id="click">Click</button><br><br>
+    <textarea name="" id="result" cols="30" rows="10"></textarea><br>
+    <button id="copy">Copy</button>
+    <script>
+        const click = document.querySelector('#click');
+        const text = document.querySelector('#text');
+        const results = document.querySelector('#result');
+        const copy = document.querySelector('#copy');
+        click.addEventListener("click", function () {
+            let result =text.value.replaceAll("\n",",");
+            // for (chr of text.value) {
+            //     if (chr.charCodeAt(0) == 10) {
+            //         result += ',';
+            //     } else {
+            //         result += chr;
+            //     }
+            // }
+            results.value = result
+        })
+        copy.addEventListener("click", function () {
+            results.select();
+            document.execCommand("copy");
+        })
+    </script>
+</body>
+
+
+</html>
