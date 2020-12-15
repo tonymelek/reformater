@@ -87,7 +87,7 @@ const results = function (FS, record) {
     $('#results').append(`<div class="card flex-grow-1  m-4"><div class="card-header text-center "><h4>${record.Region}</h4></div><div class="card-body">
 <ul class="list-unstyled"><li><strong>Suburb: </strong>${record.Name} ${FS}</ul></div></div>`)
 }
-$.get('./../FSA.json').then(data => {
+$.get('./FSA.json').then(data => {
     $('form').submit((e) => {
         e.preventDefault();
 
