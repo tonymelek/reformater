@@ -8,13 +8,15 @@
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="./index.html">Ez-Tools</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +39,9 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-4">
-                <form>
+                <form id="FSAForm">
                     <div class="form-group">
                         <label for="technology">FSA</label>
                         <select name="" class="form-control" id="technology">
@@ -51,18 +53,35 @@
 
                     <div class="form-group">
                         <label for="FSA">FSA</label>
-                        <input type="text" name="" class="form-control" id="FSA">
+                        <input type="text" name="" class="form-control" placeholder="example: 3CLA" id="FSA">
                     </div>
                     <button class="btn btn-primary my-2" type="submit">Search</button>
                 </form>
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="text-center">Search a Field Supervsior</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="FSForm">
+                            <div class="form-group">
+                                <label for="FS">Field Supervisor</label>
+                                <input type="text" name="" class="form-control" id="FS">
+                            </div>
+                            <button class="btn btn-primary my-2" type="submit">Search</button>
+                        </form>
+                        <div>
+                            <ul class="FS_result list-unstyled"></ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="results" class="col-8 d-flex flex-wrap justify-content-between">
-
             </div>
         </div>
     </div>
 
     <script src="/js/app.js"></script>
+    <script src="/js/fs.js"></script>
 </body>
 
 </html>
