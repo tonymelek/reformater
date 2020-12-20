@@ -6,3 +6,10 @@ html {
 body {
     background-color: rgba(238, 240, 213, 0.384);
 }
+.company-card{
+    width:45%;
+}
+.company-card:hover{
+    cursor: pointer;
+}
+.person{width: 48%;}
