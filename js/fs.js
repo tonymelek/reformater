@@ -60,13 +60,15 @@ $('#FSForm').submit(e => {
     e.preventDefault();
     $('.FS_result').empty();
     const searchText = $('#FS').val();
-    for (let FS of fieldSupervisors) {
-        if (FS.name.toLocaleLowerCase().includes(searchText.toLowerCase())) {
-            for (let key in FS) {
-                $('.FS_result').append(`<li><strong>${"FS " + key} : </strong>${FS[key]}</li>`);
-            }
-            $('.FS_result').append(`<br>`)
-            console.log(FS);
+    let results = fieldSupervisors.filter(FS => FS.name.toLocaleLowerCase().includes(searchText.toLowerCase()))
+
+    for (let result of results) {
+        for (let key in result) {
+            console.log(key);
+            $('.FS_result').append(`<li><strong>${"FS " + key} : </strong>${result[key]}</li>`);
         }
+        $('.FS_result').append(`<br>`)
     }
+
+
 })
